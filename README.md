@@ -4,4 +4,4 @@
 > A starting point for building web sites with Polymer 1.0 using GetSimple CMS
 
 
-See the [polymer yeoman generator](https://github.com/yeoman/generator-polymer) for more detail.
+See the [Yeoman generator for Polymer projects](https://github.com/yeoman/generator-polymer) for more detail.
