@@ -171,7 +171,7 @@ gulp.task('html', function () {
 // scripts and CSS for you.
 gulp.task('vulcanize', function () {
   return gulp.src('dist/index.html')
-    .pipe(polybuild({maximumCrush: true}))
+    .pipe(polybuild({maximumCrush: false}))
     .pipe(gulp.dest('dist/'));
 });
 
@@ -293,6 +293,18 @@ gulp.task('default', ['clean'], function (cb) {
     'vulcanize','rename-index', 'remove-old-build-index', // 'cache-config',
     cb);
 });
+
+// Build dev deployment
+gulp.task('build-dev', ['clean'], function (cb) {
+  runSequence(
+    ['copy', 'styles'],
+    'elements',
+    ['jshint', 'images', 'fonts'],
+    cb);
+});
+
+
+
 
 // Load tasks for web-component-tester
 // Adds tasks for `gulp test:local` and `gulp test:remote`
